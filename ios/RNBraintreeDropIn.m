@@ -88,7 +88,7 @@ RCT_EXPORT_METHOD(show:(NSDictionary*)options resolver:(RCTPromiseResolveBlock)r
         self.paymentRequest.supportedNetworks = @[PKPaymentNetworkAmex, PKPaymentNetworkVisa, PKPaymentNetworkMasterCard, PKPaymentNetworkDiscover, PKPaymentNetworkChinaUnionPay];
         self.paymentRequest.paymentSummaryItems =
             @[
-                [PKPaymentSummaryItem summaryItemWithLabel:merchantName amount:orderTotal]
+                [PKPaymentSummaryItem summaryItemWithLabel:merchantName amount:orderTotal type:(PKPaymentSummaryItemTypePending)]
             ];
 
         self.viewController = [[PKPaymentAuthorizationViewController alloc] initWithPaymentRequest: self.paymentRequest];
